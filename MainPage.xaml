@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="metarapp.MainPage"
+    Title="Gerador de arquivos para CALPUFF"
+    BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Título -->
+            <Label 
+                Text="Gerador de Arquivos CALPUFF"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#2C3E50"
+                Margin="0,0,0,10" />
+
+            <!-- Seção: Arquivo SBVT -->
+            <Border 
+                Stroke="#BDC3C7"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10"
+                Padding="15"
+                BackgroundColor="White">
+                <VerticalStackLayout Spacing="10">
+                    <Label 
+                        Text="📊 Arquivo SBVT (Dados METAR)"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#34495E" />
+
+                    <Button
+                        x:Name="BtnSelecionarSBVT"
+                        Text="Selecionar Arquivo SBVT.csv"
+                        Clicked="BtnSelecionarSBVT_Clicked"
+                        BackgroundColor="#3498DB"
+                        TextColor="White"
+                        FontAttributes="Bold" />
+
+                    <Border
+                        Stroke="#E0E0E0"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5"
+                        Padding="10"
+                        BackgroundColor="#FAFAFA">
+                        <Label 
+                            x:Name="LblArquivoSBVT" 
+                            Text="❌ Nenhum arquivo SBVT selecionado"
+                            FontSize="12" 
+                            TextColor="#7F8C8D"
+                            LineBreakMode="WordWrap" />
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Seção: Arquivo INMET -->
+            <Border 
+                Stroke="#BDC3C7"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10"
+                Padding="15"
+                BackgroundColor="White">
+                <VerticalStackLayout Spacing="10">
+                    <Label 
+                        Text="🌤️ Arquivo INMET (Radiação Solar)"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#34495E" />
+
+                    <Button
+                        x:Name="BtnSelecionarINMET"
+                        Text="Selecionar Arquivo INMET (dados_A612_H_...)"
+                        Clicked="BtnSelecionarINMET_Clicked"
+                        BackgroundColor="#9B59B6"
+                        TextColor="White"
+                        FontAttributes="Bold" />
+
+                    <Border
+                        Stroke="#E0E0E0"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5"
+                        Padding="10"
+                        BackgroundColor="#FAFAFA">
+                        <Label 
+                            x:Name="LblArquivoINMET" 
+                            Text="❌ Nenhum arquivo INMET selecionado"
+                            FontSize="12" 
+                            TextColor="#7F8C8D"
+                            LineBreakMode="WordWrap" />
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Seção: Arquivo UpperAir -->
+            <Border 
+                Stroke="#BDC3C7"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10"
+                Padding="15"
+                BackgroundColor="White">
+                <VerticalStackLayout Spacing="10">
+                    <Label 
+                        Text="🎈 Arquivo UpperAir"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#34495E" />
+
+                    <Button
+                        x:Name="BtnSelecionarUpperAir"
+                        Text="Selecionar Arquivo UpperAir"
+                        Clicked="BtnSelecionarUpperAir_Clicked"
+                        BackgroundColor="#E74C3C"
+                        TextColor="White"
+                        FontAttributes="Bold" />
+
+                    <Border
+                        Stroke="#E0E0E0"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5"
+                        Padding="10"
+                        BackgroundColor="#FAFAFA">
+                        <Label 
+                            x:Name="LblArquivoUpperAir" 
+                            Text="❌ Nenhum arquivo UpperAir selecionado"
+                            FontSize="12" 
+                            TextColor="#7F8C8D"
+                            LineBreakMode="WordWrap" />
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Seção: Pasta de Destino -->
+            <Border 
+                Stroke="#BDC3C7"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10"
+                Padding="15"
+                BackgroundColor="White">
+                <VerticalStackLayout Spacing="10">
+                    <Label 
+                        Text="📁 Pasta de Destino"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#34495E" />
+
+                    <Button
+                        x:Name="BtnSelecionarDestino"
+                        Text="Selecionar Pasta de Destino"
+                        Clicked="BtnSelecionarDestino_Clicked"
+                        BackgroundColor="#F39C12"
+                        TextColor="White"
+                        FontAttributes="Bold" />
+
+                    <Border
+                        Stroke="#E0E0E0"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5"
+                        Padding="10"
+                        BackgroundColor="#FAFAFA">
+                        <Label 
+                            x:Name="LblDestino" 
+                            Text="Nenhuma pasta selecionada"
+                            FontSize="12" 
+                            TextColor="#7F8C8D"
+                            LineBreakMode="WordWrap" />
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botões de Ação -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Button
+                    x:Name="BtnLimpar"
+                    Text="🗑️ Limpar Tudo"
+                    Clicked="BtnLimpar_Clicked"
+                    BackgroundColor="#95A5A6"
+                    TextColor="White"
+                    FontSize="14"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    Grid.Column="0" />
+
+                <Button
+                    x:Name="BtnProcessar"
+                    Text="🚀 PROCESSAR"
+                    Clicked="BtnProcessar_Clicked"
+                    BackgroundColor="#27AE60"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    Grid.Column="1"
+                    IsEnabled="False" />
+            </Grid>
+
+            <!-- Status -->
+            <Border
+                Stroke="#BDC3C7"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10"
+                Padding="15"
+                BackgroundColor="White">
+                <Label 
+                    x:Name="LblStatus" 
+                    Text="Aguardando processamento..."
+                    FontSize="14" 
+                    TextColor="#7F8C8D"
+                    HorizontalTextAlignment="Center"
+                    LineBreakMode="WordWrap" />
+            </Border>
+
+            <!-- Informações -->
+            <Border
+                Stroke="#16A085"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10"
+                Padding="15"
+                BackgroundColor="#E8F8F5">
+                <VerticalStackLayout Spacing="5">
+                    <Label 
+                        Text="ℹ️ Instruções:"
+                        FontSize="14"
+                        FontAttributes="Bold"
+                        TextColor="#16A085" />
+
+                    <Label 
+                        Text="1. Selecione o arquivo SBVT.csv (dados METAR)"
+                        FontSize="12"
+                        TextColor="#2C3E50" />
+
+                    <Label 
+                        Text="2. Selecione o arquivo INMET (dados_A612_H_...)"
+                        FontSize="12"
+                        TextColor="#2C3E50" />
+
+                    <Label 
+                        Text="3. Selecione o arquivo UpperAir"
+                        FontSize="12"
+                        TextColor="#2C3E50" />
+
+                    <Label 
+                        Text="4. Escolha a pasta onde salvar o resultado"
+                        FontSize="12"
+                        TextColor="#2C3E50" />
+
+                    <Label 
+                        Text="5. Clique em PROCESSAR e aguarde"
+                        FontSize="12"
+                        TextColor="#2C3E50" />
+
+                    <BoxView 
+                        HeightRequest="1" 
+                        BackgroundColor="#BDC3C7" 
+                        Margin="0,10,0,5" />
+
+                    <Label 
+                        Text="📝 Arquivos gerados: radiacao_tratada.csv, teste2.csv, upperair_tratado.csv"
+                        FontSize="11"
+                        TextColor="#7F8C8D"
+                        FontAttributes="Italic" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

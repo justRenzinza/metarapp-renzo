@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "metarapp", "metarapp.csproj", "{856FD050-662A-B834-15BE-5A09D6583F45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{856FD050-662A-B834-15BE-5A09D6583F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856FD050-662A-B834-15BE-5A09D6583F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856FD050-662A-B834-15BE-5A09D6583F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856FD050-662A-B834-15BE-5A09D6583F45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1DAA252-A5C0-4E31-AB18-9CD49ACE93BF}
+	EndGlobalSection
+EndGlobal
